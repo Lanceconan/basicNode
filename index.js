@@ -4,8 +4,12 @@ const morgan = require('morgan');
 
 const server = express();
 
-//MIDDLEWARE
+// SETTINGS
+server.set('appName', 'Mi primer Server');
+server.set('views', __dirname + '/views');
+server.set('view engine', 'ejs');
 
+//MIDDLEWARE
 server.use(
     morgan('combined')
 );
@@ -28,16 +32,19 @@ server.use(
 server.get(
     '/',
     (req, res) => {
-        res.send('<h1> Hola mundo desde Express</h1>');
-        res.end();
+        // res.send('<h1> Hola mundo desde Express</h1>');
+        // res.end();
+        res.render('index.ejs');
     }
 );
 
 server.get(
     '/login',
     (req, res) => {
-        res.send('<h1>aquí va el login</h1>');
-        res.end();
+        // res.send('<h1>aquí va el login</h1>');
+        // res.end();
+        res.render('login.ejs');
+
     }
 );
 
@@ -54,5 +61,6 @@ server.listen(
     3000,
     () => {
         console.log('Servidor oyendo en el puerto 3000'.green);
+        console.log('El nombre de la APP: ', server.get('appName'));
     }
 );
