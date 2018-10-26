@@ -1,8 +1,30 @@
 const express = require('express');
 const color = require('colors');
+const morgan = require('morgan');
 
 const server = express();
 
+//MIDDLEWARE
+
+server.use(
+    morgan('combined')
+);
+
+// server.use(
+//     function(req, res, next) {
+//         console.log('request url: ', req.url);
+//         next();
+//     }
+// );
+
+// server.use(
+//     (req, res, next) => {
+//         console.log('Ha pasado por esta función');
+//         next();
+//     }
+// );
+
+//RUTAS
 server.get(
     '/',
     (req, res) => {
@@ -22,7 +44,7 @@ server.get(
 server.get(
     '*',
     (req, res) => {
-        res.writeHead(404, { 'content-type': 'text/html' })
+        //res.writeHead(404, { 'content-type': 'text/html' });
         res.send('<h1>Ruta no específicada</h1>');
         res.end();
     }
