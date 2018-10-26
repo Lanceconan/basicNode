@@ -29,24 +29,12 @@ server.use(
 // );
 
 //RUTAS
-server.get(
-    '/',
-    (req, res) => {
-        // res.send('<h1> Hola mundo desde Express</h1>');
-        // res.end();
-        res.render('index.ejs');
-    }
-);
+const routes = require('./routes.js');
+server.use(routes);
 
-server.get(
-    '/login',
-    (req, res) => {
-        // res.send('<h1>aquí va el login</h1>');
-        // res.end();
-        res.render('login.ejs');
+const routesApi = require('./routes-api.js');
+server.use('/api', routesApi);
 
-    }
-);
 
 server.get(
     '*',
