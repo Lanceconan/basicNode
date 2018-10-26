@@ -1,18 +1,19 @@
 {
-  "name": "nodejs-curso",
-  "version": "0.0.1",
-  "description": "un curso breve de node",
-  "main": "index.js",
-  "dependencies": {
-    "colors": "^1.3.2"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "nodejs"
-  ],
-  "author": "Lanceconan",
-  "license": "ISC"
+    "name": "nodejs-curso",
+    "version": "0.0.1",
+    "description": "un curso breve de node",
+    "main": "index.js",
+    "dependencies": {
+        "colors": "^1.3.2",
+        "express": "^4.16.4"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "start": "node index.js"
+    },
+    "keywords": [
+        "nodejs"
+    ],
+    "author": "Lanceconan",
+    "license": "ISC"
 }
